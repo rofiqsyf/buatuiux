@@ -15,16 +15,18 @@ class HomeController extends Controller
             (object)[
                 'title' => 'Kunjungan Kerja Diskominfo',
                 'slug' => 'kunjungan-kerja-diskominfo',
-                'excerpt' => 'Diskominfo melakukan kunjungan kerja dalam rangka peningkatan layanan publik...',
+                'summary' => 'Diskominfo melakukan kunjungan kerja dalam rangka peningkatan layanan publik...',
                 'published_at' => now(),
-                'image' => null
+                'image_url' => null,
+                'category' => 'Kegiatan'
             ],
             (object)[
                 'title' => 'Rapat Koordinasi Keterbukaan Informasi',
                 'slug' => 'rapat-koordinasi',
-                'excerpt' => 'Rapat koordinasi bersama PPID pelaksana seluruh instansi untuk membahas transparansi...',
+                'summary' => 'Rapat koordinasi bersama PPID pelaksana seluruh instansi untuk membahas transparansi...',
                 'published_at' => now()->subDays(2),
-                'image' => null
+                'image_url' => null,
+                'category' => 'Rapat'
             ]
         ]);
 

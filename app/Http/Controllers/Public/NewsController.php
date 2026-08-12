@@ -12,15 +12,15 @@ class NewsController extends Controller
     public function index()
     {
         $items = collect([
-            (object)['title' => 'Kunjungan Kerja Diskominfo', 'slug' => 'kunjungan-kerja-diskominfo', 'excerpt' => 'Diskominfo melakukan kunjungan kerja...', 'published_at' => now(), 'image' => null],
-            (object)['title' => 'Rapat Koordinasi Keterbukaan Informasi', 'slug' => 'rapat-koordinasi', 'excerpt' => 'Rapat koordinasi bersama PPID...', 'published_at' => now()->subDays(2), 'image' => null],
-            (object)['title' => 'Peluncuran Website Baru PPID', 'slug' => 'peluncuran-website', 'excerpt' => 'PPID meluncurkan website baru...', 'published_at' => now()->subDays(5), 'image' => null],
+            (object)['title' => 'Kunjungan Kerja Diskominfo', 'slug' => 'kunjungan-kerja-diskominfo', 'summary' => 'Diskominfo melakukan kunjungan kerja...', 'published_at' => now(), 'image_url' => null, 'category' => 'Kegiatan'],
+            (object)['title' => 'Rapat Koordinasi Keterbukaan Informasi', 'slug' => 'rapat-koordinasi', 'summary' => 'Rapat koordinasi bersama PPID...', 'published_at' => now()->subDays(2), 'image_url' => null, 'category' => 'Rapat'],
+            (object)['title' => 'Peluncuran Website Baru PPID', 'slug' => 'peluncuran-website', 'summary' => 'PPID meluncurkan website baru...', 'published_at' => now()->subDays(5), 'image_url' => null, 'category' => 'Berita'],
         ]);
         $newsList = new \Illuminate\Pagination\LengthAwarePaginator($items, 3, 6, 1, ['path' => request()->url()]);
 
         $dipDocs = collect([
-            (object)['title' => 'Laporan Kinerja 2025', 'year' => '2025', 'category' => 'berkala', 'file_path' => '#'],
-            (object)['title' => 'Renstra 2024-2029', 'year' => '2024', 'category' => 'berkala', 'file_path' => '#'],
+            (object)['id' => 1, 'registration_number' => 'DIP-2025-01', 'title' => 'Laporan Kinerja 2025', 'year' => '2025', 'category' => 'berkala', 'file_path' => '#'],
+            (object)['id' => 2, 'registration_number' => 'DIP-2024-02', 'title' => 'Renstra 2024-2029', 'year' => '2024', 'category' => 'berkala', 'file_path' => '#'],
         ]);
 
         $stats = [
