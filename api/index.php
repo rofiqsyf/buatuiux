@@ -4,7 +4,7 @@ $envVars = [
     'APP_DEBUG' => 'true',
     'APP_KEY' => 'base64:9FpY0bN8dOa4M2pY0bN8dOa4M2pY0bN8dOa4M2pY0bM=',
     'CACHE_DRIVER' => 'array',
-    'LOG_CHANNEL' => 'stderr',
+    'LOG_CHANNEL' => 'errorlog',
     'SESSION_DRIVER' => 'cookie',
     'VIEW_COMPILED_PATH' => '/tmp',
     'APP_CONFIG_CACHE' => '/tmp/config.php',
