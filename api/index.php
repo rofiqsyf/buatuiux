@@ -3,6 +3,7 @@
 /**
  * Entry point for Vercel Serverless Functions
  * Forward requests to Laravel's normal entry point
+ */
 $envVars = [
     'APP_ENV' => 'production',
     'APP_DEBUG' => 'true',
