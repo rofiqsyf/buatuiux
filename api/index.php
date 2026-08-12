@@ -19,4 +19,13 @@ foreach ($envVars as $key => $value) {
     $_SERVER[$key] = $value;
 }
 
-require __DIR__ . '/../public/index.php';
+try {
+    require __DIR__ . '/../public/index.php';
+} catch (\Throwable $e) {
+    echo "<h1>FATAL EXCEPTION</h1>";
+    echo "<pre>";
+    echo "Error: " . $e->getMessage() . "\n\n";
+    echo "File: " . $e->getFile() . " on line " . $e->getLine() . "\n\n";
+    echo "Trace:\n" . $e->getTraceAsString();
+    echo "</pre>";
+}
