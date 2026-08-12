@@ -19,55 +19,32 @@ class TrackingController extends Controller
             ], 422);
         }
 
-        $infoReq = InformationRequest::where('ticket_number', $ticket)
-            ->orWhere('ticket_number', strtoupper($ticket))
-            ->first();
-
-        if ($infoReq) {
-            $statusLabels = [
-                'pending' => 'Menunggu Verifikasi',
-                'processing' => 'Sedang Diproses Tim PPID',
-                'approved' => 'Selesai - Informasi Disetujui',
-                'rejected' => 'Permohonan Ditolak',
-            ];
-
+        // Dummy Frontend-Only Logic
+        if (str_starts_with(strtoupper($ticket), 'REQ')) {
             return response()->json([
                 'success' => true,
                 'found' => true,
-                'ticket_number' => $infoReq->ticket_number,
-                'name' => $infoReq->name,
-                'status' => $infoReq->status,
-                'status_label' => $statusLabels[$infoReq->status] ?? 'Sedang Diproses',
-                'stage' => $infoReq->status === 'approved' ? 'Dokumen Siap / Dikirim' : 'Verifikasi Substansi & Dokumen PPID',
+                'ticket_number' => strtoupper($ticket),
+                'name' => 'Pengguna Simulasi',
+                'status' => 'processing',
+                'status_label' => 'Sedang Diproses Tim PPID',
+                'stage' => 'Verifikasi Substansi & Dokumen PPID',
                 'estimate' => 'Maks. 10 hari kerja',
-                'created_at' => $infoReq->created_at ? $infoReq->created_at->format('d F Y') : date('d F Y'),
-                'response_notes' => $infoReq->response_notes,
+                'created_at' => date('d F Y'),
+                'response_notes' => 'Ini adalah simulasi pelacakan tiket permohonan informasi.',
             ]);
-        }
-
-        // Fallback: Check ContactMessage ticket (INQ-)
-        $contactMsg = \App\Models\ContactMessage::where('ticket_number', $ticket)
-            ->orWhere('ticket_number', strtoupper($ticket))
-            ->first();
-
-        if ($contactMsg) {
-            $contactStatusLabels = [
-                'unread' => 'Pesan Diterima - Menunggu Respon Sekretariat',
-                'read' => 'Pesan Telah Dibaca & Diproses Tim Sekretariat',
-                'responded' => 'Pesan Telah Dibalas / Ditindaklanjuti',
-            ];
-
+        } elseif (str_starts_with(strtoupper($ticket), 'INQ')) {
             return response()->json([
                 'success' => true,
                 'found' => true,
-                'ticket_number' => $contactMsg->ticket_number,
-                'name' => $contactMsg->name,
-                'status' => $contactMsg->status,
-                'status_label' => $contactStatusLabels[$contactMsg->status] ?? 'Pesan Diterima',
+                'ticket_number' => strtoupper($ticket),
+                'name' => 'Pengguna Simulasi',
+                'status' => 'unread',
+                'status_label' => 'Pesan Diterima - Menunggu Respon',
                 'stage' => 'Tindak Lanjut Sekretariat PPID',
                 'estimate' => 'Maks. 3 hari kerja',
-                'created_at' => $contactMsg->created_at ? $contactMsg->created_at->format('d F Y') : date('d F Y'),
-                'response_notes' => 'Pesan kontak Anda telah tercatat dengan subjek: ' . $contactMsg->topic_category,
+                'created_at' => date('d F Y'),
+                'response_notes' => 'Ini adalah simulasi pelacakan pesan kontak/pengaduan.',
             ]);
         }
 
@@ -75,7 +52,7 @@ class TrackingController extends Controller
             'success' => true,
             'found' => false,
             'ticket_number' => $ticket,
-            'message' => 'Nomor tiket ' . $ticket . ' tidak ditemukan dalam sistem PPID. Pastikan nomor tiket yang Anda masukkan sudah benar.',
+            'message' => 'Nomor tiket ' . $ticket . ' tidak ditemukan dalam sistem simulasi. Awali dengan REQ atau INQ.',
         ]);
     }
 }

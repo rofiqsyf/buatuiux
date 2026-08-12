@@ -40,30 +40,12 @@ class RequestController extends Controller
                 'pernyataan.accepted' => 'Anda harus menyetujui keabsahan data permohonan.',
             ]);
 
-            $attachmentPath = null;
-            if ($request->hasFile('fileLampiran')) {
-                $attachmentPath = $request->file('fileLampiran')->store('attachments', 'public');
-            }
-
-            $ticketNumber = 'REQ-' . date('Ymd') . '-' . strtoupper(Str::random(4));
-
-            $infoRequest = InformationRequest::create([
-                'ticket_number' => $ticketNumber,
-                'name' => $validated['nama'],
-                'nik' => $validated['nik'],
-                'email' => $validated['email'],
-                'phone' => $validated['telepon'],
-                'address' => $validated['alamat'],
-                'information_requested' => $validated['rincian'],
-                'purpose' => $validated['tujuan'],
-                'attachment_file_path' => $attachmentPath,
-                'status' => 'pending',
-            ]);
+            $ticketNumber = 'REQ-DUMMY-' . strtoupper(Str::random(6));
 
             return response()->json([
                 'success' => true,
                 'ticket_number' => $ticketNumber,
-                'message' => 'Permohonan berhasil dikirim. Nomor tiket Anda: #' . $ticketNumber,
+                'message' => 'Permohonan (Simulasi) berhasil dikirim. Nomor tiket Anda: #' . $ticketNumber,
             ]);
 
         } catch (\Illuminate\Validation\ValidationException $e) {

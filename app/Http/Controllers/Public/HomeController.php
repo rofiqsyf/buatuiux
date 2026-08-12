@@ -11,14 +11,29 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $latestNews = News::orderBy('published_at', 'desc')->take(2)->get();
+        $latestNews = collect([
+            (object)[
+                'title' => 'Kunjungan Kerja Diskominfo',
+                'slug' => 'kunjungan-kerja-diskominfo',
+                'excerpt' => 'Diskominfo melakukan kunjungan kerja dalam rangka peningkatan layanan publik...',
+                'published_at' => now(),
+                'image' => null
+            ],
+            (object)[
+                'title' => 'Rapat Koordinasi Keterbukaan Informasi',
+                'slug' => 'rapat-koordinasi',
+                'excerpt' => 'Rapat koordinasi bersama PPID pelaksana seluruh instansi untuk membahas transparansi...',
+                'published_at' => now()->subDays(2),
+                'image' => null
+            ]
+        ]);
 
         $stats = [
-            'total_docs' => DipDocument::count(),
-            'berkala' => DipDocument::where('category', 'berkala')->count(),
-            'serta_merta' => DipDocument::where('category', 'serta-merta')->count(),
-            'setiap_saat' => DipDocument::where('category', 'setiap-saat')->count(),
-            'dikecualikan' => DipDocument::where('category', 'dikecualikan')->count(),
+            'total_docs' => 142,
+            'berkala' => 45,
+            'serta_merta' => 30,
+            'setiap_saat' => 60,
+            'dikecualikan' => 7,
         ];
 
         return view('home', compact('latestNews', 'stats'));

@@ -14,32 +14,35 @@ class RegulationController extends Controller
         $year = $request->query('tahun');
         $search = $request->query('q');
 
-        $query = Regulation::query();
+        $items = collect([
+            (object)['title' => 'UU Keterbukaan Informasi Publik', 'sub_title' => 'Undang-Undang No. 14 Tahun 2008', 'category' => 'uu', 'year' => '2008', 'file_path' => '#'],
+            (object)['title' => 'PP Pelaksanaan UU KIP', 'sub_title' => 'Peraturan Pemerintah No. 61 Tahun 2010', 'category' => 'pp', 'year' => '2010', 'file_path' => '#'],
+            (object)['title' => 'Perki Standar Layanan Informasi Publik', 'sub_title' => 'Peraturan Komisi Informasi No. 1 Tahun 2021', 'category' => 'perki', 'year' => '2021', 'file_path' => '#'],
+        ]);
 
         if ($category !== 'semua') {
-            $query->where('category', $category);
+            $items = $items->where('category', $category);
         }
 
         if ($year) {
-            $query->where('year', $year);
+            $items = $items->where('year', $year);
         }
 
         if ($search) {
-            $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('sub_title', 'like', "%{$search}%");
+            $items = $items->filter(function ($item) use ($search) {
+                return stripos($item->title, $search) !== false || stripos($item->sub_title, $search) !== false;
             });
         }
 
-        $regulations = $query->orderBy('year', 'desc')->paginate(10)->withQueryString();
+        $regulations = new \Illuminate\Pagination\LengthAwarePaginator($items, $items->count(), 10, 1, ['path' => request()->url()]);
 
         $counts = [
-            'semua' => Regulation::count(),
-            'uu' => Regulation::where('category', 'uu')->count(),
-            'pp' => Regulation::where('category', 'pp')->count(),
-            'perki' => Regulation::where('category', 'perki')->count(),
-            'perda' => Regulation::where('category', 'perda')->count(),
-            'internal' => Regulation::where('category', 'internal')->count(),
+            'semua' => 15,
+            'uu' => 3,
+            'pp' => 2,
+            'perki' => 5,
+            'perda' => 3,
+            'internal' => 2,
         ];
 
         return view('regulasi', compact('regulations', 'counts', 'category', 'year', 'search'));

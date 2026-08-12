@@ -27,30 +27,12 @@ class ContactController extends Controller
             'kontakFile' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:5120',
         ]);
 
-        $filePath = null;
-        if ($request->hasFile('kontakFile')) {
-            $filePath = $request->file('kontakFile')->store('contact_attachments', 'public');
-        }
-
-        $ticketNum = 'INQ-' . date('Ymd') . '-' . strtoupper(Str::random(4));
-
-        ContactMessage::create([
-            'ticket_number' => $ticketNum,
-            'name' => $validated['nama'],
-            'phone' => $validated['telepon'],
-            'email' => $validated['email'],
-            'applicant_category' => $validated['kategori_pemohon'] ?? 'perorangan',
-            'topic_category' => $validated['subjek'],
-            'title' => $validated['judul'],
-            'message' => $validated['pesan'],
-            'attachment_path' => $filePath,
-            'status' => 'unread',
-        ]);
+        $ticketNum = 'INQ-DUMMY-' . strtoupper(Str::random(6));
 
         return response()->json([
             'success' => true,
             'ticket_number' => $ticketNum,
-            'message' => 'Pesan Anda telah berhasil terkirim. Nomor tiket: #' . $ticketNum,
+            'message' => 'Pesan Simulasi telah berhasil terkirim. Nomor tiket: #' . $ticketNum,
         ]);
     }
 }

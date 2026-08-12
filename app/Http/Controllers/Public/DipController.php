@@ -14,31 +14,36 @@ class DipController extends Controller
         $year = $request->query('tahun');
         $search = $request->query('q');
 
-        $query = DipDocument::query();
+        $items = collect([
+            (object)['id' => 1, 'registration_number' => 'DIP-2025-01', 'title' => 'Laporan Kinerja Instansi Pemerintah (LKjIP) 2025', 'category' => 'berkala', 'year' => '2025', 'file_path' => '#', 'downloads_count' => 10],
+            (object)['id' => 2, 'registration_number' => 'DIP-2024-02', 'title' => 'Rencana Strategis (Renstra) 2024-2029', 'category' => 'berkala', 'year' => '2024', 'file_path' => '#', 'downloads_count' => 25],
+            (object)['id' => 3, 'registration_number' => 'DIP-2025-03', 'title' => 'Dokumen Anggaran DPA 2025', 'category' => 'setiap-saat', 'year' => '2025', 'file_path' => '#', 'downloads_count' => 5],
+            (object)['id' => 4, 'registration_number' => 'DIP-2025-04', 'title' => 'Informasi Bencana Alam', 'category' => 'serta-merta', 'year' => '2025', 'file_path' => '#', 'downloads_count' => 100],
+            (object)['id' => 5, 'registration_number' => 'DIP-2025-05', 'title' => 'Dokumen Rahasia Negara', 'category' => 'dikecualikan', 'year' => '2025', 'file_path' => null, 'downloads_count' => 0],
+        ]);
 
         if ($category !== 'semua') {
-            $query->where('category', $category);
+            $items = $items->where('category', $category);
         }
 
         if ($year) {
-            $query->where('year', $year);
+            $items = $items->where('year', $year);
         }
 
         if ($search) {
-            $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('registration_number', 'like', "%{$search}%");
+            $items = $items->filter(function ($item) use ($search) {
+                return stripos($item->title, $search) !== false || stripos($item->registration_number, $search) !== false;
             });
         }
 
-        $documents = $query->orderBy('year', 'desc')->paginate(10)->withQueryString();
+        $documents = new \Illuminate\Pagination\LengthAwarePaginator($items, $items->count(), 10, 1, ['path' => request()->url()]);
 
         $categoryCounts = [
-            'semua' => DipDocument::count(),
-            'berkala' => DipDocument::where('category', 'berkala')->count(),
-            'serta-merta' => DipDocument::where('category', 'serta-merta')->count(),
-            'setiap-saat' => DipDocument::where('category', 'setiap-saat')->count(),
-            'dikecualikan' => DipDocument::where('category', 'dikecualikan')->count(),
+            'semua' => 142,
+            'berkala' => 45,
+            'serta-merta' => 30,
+            'setiap-saat' => 60,
+            'dikecualikan' => 7,
         ];
 
         return view('informasi-publik', compact('documents', 'categoryCounts', 'category', 'year', 'search'));
@@ -46,18 +51,6 @@ class DipController extends Controller
 
     public function download($id)
     {
-        $doc = DipDocument::findOrFail($id);
-
-        if ($doc->category === 'dikecualikan') {
-            return redirect()->back()->with('error', 'Dokumen kategori Dikecualikan bersifat rahasia dan tidak dapat diunduh.');
-        }
-
-        $doc->increment('downloads_count');
-
-        if ($doc->file_path && file_exists(storage_path('app/public/' . $doc->file_path))) {
-            return response()->download(storage_path('app/public/' . $doc->file_path));
-        }
-
-        return redirect()->back()->with('info', 'Mengunduh dokumen: ' . $doc->title);
+        return redirect()->back()->with('info', 'Mengunduh dokumen (Fitur simulasi frontend-only, file asli tidak tersedia).');
     }
 }

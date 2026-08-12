@@ -11,16 +11,24 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $newsList = News::orderBy('published_at', 'desc')->paginate(6);
+        $items = collect([
+            (object)['title' => 'Kunjungan Kerja Diskominfo', 'slug' => 'kunjungan-kerja-diskominfo', 'excerpt' => 'Diskominfo melakukan kunjungan kerja...', 'published_at' => now(), 'image' => null],
+            (object)['title' => 'Rapat Koordinasi Keterbukaan Informasi', 'slug' => 'rapat-koordinasi', 'excerpt' => 'Rapat koordinasi bersama PPID...', 'published_at' => now()->subDays(2), 'image' => null],
+            (object)['title' => 'Peluncuran Website Baru PPID', 'slug' => 'peluncuran-website', 'excerpt' => 'PPID meluncurkan website baru...', 'published_at' => now()->subDays(5), 'image' => null],
+        ]);
+        $newsList = new \Illuminate\Pagination\LengthAwarePaginator($items, 3, 6, 1, ['path' => request()->url()]);
 
-        $dipDocs = DipDocument::orderBy('year', 'desc')->take(5)->get();
+        $dipDocs = collect([
+            (object)['title' => 'Laporan Kinerja 2025', 'year' => '2025', 'category' => 'berkala', 'file_path' => '#'],
+            (object)['title' => 'Renstra 2024-2029', 'year' => '2024', 'category' => 'berkala', 'file_path' => '#'],
+        ]);
 
         $stats = [
-            'total_docs' => DipDocument::count(),
-            'berkala' => DipDocument::where('category', 'berkala')->count(),
-            'serta_merta' => DipDocument::where('category', 'serta-merta')->count(),
-            'setiap_saat' => DipDocument::where('category', 'setiap-saat')->count(),
-            'dikecualikan' => DipDocument::where('category', 'dikecualikan')->count(),
+            'total_docs' => 142,
+            'berkala' => 45,
+            'serta_merta' => 30,
+            'setiap_saat' => 60,
+            'dikecualikan' => 7,
         ];
 
         return view('berita-transparansi', compact('newsList', 'dipDocs', 'stats'));
@@ -28,7 +36,12 @@ class NewsController extends Controller
 
     public function show($slug)
     {
-        $news = News::where('slug', $slug)->firstOrFail();
+        $news = (object)[
+            'title' => 'Berita Dummy: ' . str_replace('-', ' ', $slug),
+            'content' => '<p>Ini adalah konten berita dummy untuk slug: ' . $slug . '. Karena ini versi Frontend-Only, database dinonaktifkan sehingga semua berita menampilkan teks ini.</p>',
+            'published_at' => now(),
+            'image' => null
+        ];
         return view('berita-detail', compact('news'));
     }
 }
