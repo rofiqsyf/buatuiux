@@ -1,5 +1,6 @@
 <?php
-ini_set('display_errors', '1');
+echo "HELLO FROM VERCEL PHP!";
+exit;
 error_reporting(E_ALL);
 
 /**
