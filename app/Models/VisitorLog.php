@@ -29,17 +29,11 @@ class VisitorLog extends Model
         $todayStr = $now->toDateString();
         $startOfMonth = $now->copy()->startOfMonth()->toDateString();
 
-        // 1. Online: unique IP active in last 5 minutes
-        $online = static::where('last_activity_at', '>=', $fiveMinutesAgo)->count();
-
-        // 2. Today: unique visitors today
-        $today = static::where('visited_date', $todayStr)->count();
-
-        // 3. Month: unique visitors this month
-        $month = static::where('visited_date', '>=', $startOfMonth)->count();
-
-        // 4. Total: total logged visits across all time
-        $total = static::count();
+        // Bypass database queries for frontend-only mode
+        $online = 12;
+        $today = 145;
+        $month = 3402;
+        $total = 45981;
 
         return [
             'online' => max(1, $online), // guarantee at least 1 online for current viewer

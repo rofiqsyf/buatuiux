@@ -24,16 +24,17 @@ class TrackVisitor
                 $today = Carbon::today()->toDateString();
                 $now = Carbon::now();
 
-                VisitorLog::updateOrCreate(
-                    [
-                        'ip_address' => $ip,
-                        'visited_date' => $today,
-                    ],
-                    [
-                        'user_agent' => $agent,
-                        'last_activity_at' => $now,
-                    ]
-                );
+                // Bypass database write for frontend-only mode
+                // VisitorLog::updateOrCreate(
+                //     [
+                //         'ip_address' => $ip,
+                //         'visited_date' => $today,
+                //     ],
+                //     [
+                //         'user_agent' => $agent,
+                //         'last_activity_at' => $now,
+                //     ]
+                // );
             }
         } catch (\Exception $e) {
             // Silently catch exception so middleware never breaks request flow
