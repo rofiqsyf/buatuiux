@@ -12,6 +12,7 @@ $envVars = [
     'APP_PACKAGES_CACHE' => '/tmp/packages.php',
     'APP_ROUTES_CACHE' => '/tmp/routes.php',
     'APP_EVENTS_CACHE' => '/tmp/events.php',
+    'APP_MAINTENANCE_DRIVER' => 'file',
 ];
 foreach ($envVars as $key => $value) {
     putenv("$key=$value");
