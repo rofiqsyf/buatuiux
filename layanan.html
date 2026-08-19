@@ -77,69 +77,197 @@
     </header>
 
     <main class="flex-grow">
-        <section class="hero-gradient text-white py-14">
+        <!-- Header Banner -->
+        <section class="hero-gradient text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-                <h1 class="font-heading font-extrabold text-2xl sm:text-4xl text-white">Portal Layanan Digital BHW</h1>
-                <p class="text-slate-200 text-xs sm:text-sm mt-2 max-w-3xl">
-                    Pusat integrasi seluruh layanan publik, pengajuan permohonan informasi, katalog alat kesehatan & farmasi, serta pelacakan tiket permohonan secara real-time.
+                <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-white/10 px-3.5 py-1.5 rounded-full border border-white/20">Layanan Digital BHW</span>
+                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-white mt-3">Portal Layanan Digital BHW</h1>
+                <p class="text-slate-200 text-sm sm:text-base mt-3 max-w-3xl leading-relaxed">
+                    Pusat integrasi seluruh layanan publik, pengajuan permohonan informasi, katalog alat kesehatan &amp; farmasi, serta pelacakan tiket permohonan secara real-time.
                 </p>
             </div>
         </section>
 
-        <section class="py-12 bg-slate-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-14 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <!-- Live Inline Tracking Status Widget -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+                        <div>
+                            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Live Status Tracking</span>
+                            <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-slate-800 mt-0.5">Lacak Tiket Permohonan Informasi</h2>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400">Database Realtime Sync</span>
+                    </div>
+
+                    <form onsubmit="submitInlineTracking(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-2">
+                        <div class="sm:col-span-8">
+                            <input type="text" id="inlineTicketInput" required placeholder="Masukkan nomor tiket (Contoh: REQ-20260805-A1B2)" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-teal-500 text-xs font-mono uppercase tracking-wider bg-slate-50">
+                        </div>
+                        <div class="sm:col-span-4">
+                            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-xs transition shadow-sm">
+                                Lacak Tiket Sekarang
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="inlineTrackingResult" class="hidden"></div>
+                </div>
+
+                <!-- 3 Service Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Service Card 1 -->
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between">
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between group">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold">
-                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <div class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold group-hover:bg-teal-600 group-hover:text-white transition">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                             </div>
-                            <h3 class="font-heading font-bold text-slate-800 text-xl">Permohonan Informasi Online</h3>
+                            <h3 class="font-heading font-bold text-slate-800 text-xl group-hover:text-teal-600 transition">Permohonan Informasi Online</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 Form digital mandiri untuk mengajukan permintaan dokumen resmi, laporan keuangan, dan program kerja BUMD.
                             </p>
                         </div>
-                        <a href="/formulir-permohonan.html" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-xs text-center transition">
+                        <a href="/formulir-permohonan.html" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-xs text-center transition shadow-sm">
                             Isi Formulir Sekarang
                         </a>
                     </div>
 
                     <!-- Service Card 2 -->
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between">
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between group">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold group-hover:bg-emerald-600 group-hover:text-white transition">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                             </div>
-                            <h3 class="font-heading font-bold text-slate-800 text-xl">Katalog Alkes &amp; Obat</h3>
+                            <h3 class="font-heading font-bold text-slate-800 text-xl group-hover:text-emerald-600 transition">Katalog Alkes &amp; Obat</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 Pencarian produk alat kesehatan, obat-obatan, APD, dan peralatan medis dengan estimasi harga dan pemesanan WhatsApp.
                             </p>
                         </div>
-                        <a href="/katalog-produk.html" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs text-center transition">
+                        <a href="/katalog-produk.html" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs text-center transition shadow-sm">
                             Jelajahi Katalog Alkes
                         </a>
                     </div>
 
                     <!-- Service Card 3 -->
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between">
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition space-y-4 flex flex-col justify-between group">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold group-hover:bg-sky-600 group-hover:text-white transition">
                                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                             </div>
-                            <h3 class="font-heading font-bold text-slate-800 text-xl">Pelacakan Tiket Permohonan</h3>
+                            <h3 class="font-heading font-bold text-slate-800 text-xl group-hover:text-sky-600 transition">Pelacakan Tiket Permohonan</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 Cek status dan tahapan verifikasi berkas permohonan informasi Anda secara cepat dengan memasukkan nomor tiket.
                             </p>
                         </div>
-                        <button onclick="openTrackingModal()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl text-xs text-center transition">
+                        <button onclick="openTrackingModal()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl text-xs text-center transition shadow-sm">
                             Lacak Tiket Sekarang
                         </button>
                     </div>
                 </div>
+
+                <!-- Persyaratan Kelengkapan Berkas (SOP Mandatori) -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Persyaratan Dokumen</span>
+                        <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-slate-800 mt-1">Ketentuan Kelengkapan Berkas Permohonan</h2>
+                        <p class="text-xs text-slate-500 mt-1">Pastikan berkas Lampiran Surat / Dokumen Pendukung yang diunggah memenuhi kriteria berikut</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Pemohon Perorangan -->
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-xl bg-teal-600 text-white font-bold text-xs flex items-center justify-center">A</span>
+                                <h3 class="font-heading font-bold text-slate-800 text-base">Pemohon Perorangan (Individu)</h3>
+                            </div>
+                            <ul class="space-y-2 text-xs text-slate-600 leading-relaxed list-disc list-inside">
+                                <li>Mengunggah <strong>Lampiran Surat / Dokumen Pendukung</strong> yang sah.</li>
+                                <li>Dokumen terbaca jelas dan tidak buram (Format PDF, DOC, DOCX, JPG, PNG maks. 5 MB).</li>
+                                <li>Mencantumkan rincian informasi dan tujuan penggunaan secara spesifik.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Pemohon Lembaga / Ormas -->
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-xl bg-teal-600 text-white font-bold text-xs flex items-center justify-center">B</span>
+                                <h3 class="font-heading font-bold text-slate-800 text-base">Pemohon Lembaga / Ormas / Badan Hukum</h3>
+                            </div>
+                            <ul class="space-y-2 text-xs text-slate-600 leading-relaxed list-disc list-inside">
+                                <li>Mengunggah <strong>Lampiran Surat / Dokumen Pendukung</strong> (Akta Notaris / Surat Permohonan / Surat Kuasa Organisasi).</li>
+                                <li>Dokumen terbaca jelas dan tidak buram (Format PDF, DOC, DOCX, JPG, PNG maks. 5 MB).</li>
+                                <li>Mencantumkan rincian informasi dan tujuan penggunaan yang jelas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion (Pusat Bantuan Layanan) -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Pusat Bantuan</span>
+                        <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-slate-800 mt-1">Pertanyaan Yang Sering Diajukan (FAQ Layanan Digital)</h2>
+                    </div>
+
+                    <div class="space-y-3">
+                        <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 group transition duration-200">
+                            <summary class="font-heading font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
+                                <span>Bagaimana cara melacak permohonan saya?</span>
+                                <span class="w-5 h-5 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:rotate-180 transition transform text-xs">▼</span>
+                            </summary>
+                            <div class="text-xs text-slate-600 leading-relaxed mt-2.5 pt-2.5 border-t border-slate-200/60">
+                                Gunakan widget <strong>Live Status Tracking</strong> di bagian atas halaman ini atau klik tombol "Lacak Tiket" di bagian navigasi atas. Masukkan nomor tiket permohonan yang Anda dapatkan saat pengajuan.
+                            </div>
+                        </details>
+
+                        <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 group transition duration-200">
+                            <summary class="font-heading font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
+                                <span>Apakah permohonan informasi digital ini dipungut biaya?</span>
+                                <span class="w-5 h-5 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:rotate-180 transition transform text-xs">▼</span>
+                            </summary>
+                            <div class="text-xs text-slate-600 leading-relaxed mt-2.5 pt-2.5 border-t border-slate-200/60">
+                                Seluruh layanan permohonan informasi digital dan pengiriman softcopy via email <strong>100% GRATIS (0 Rupiah)</strong>.
+                            </div>
+                        </details>
+
+                        <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 group transition duration-200">
+                            <summary class="font-heading font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
+                                <span>Di mana saya dapat melihat panduan alur SOP dan cara pengajuan keberatan?</span>
+                                <span class="w-5 h-5 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:rotate-180 transition transform text-xs">▼</span>
+                            </summary>
+                            <div class="text-xs text-slate-600 leading-relaxed mt-2.5 pt-2.5 border-t border-slate-200/60">
+                                Panduan dokumentasi alur SOP lengkap, tata cara pengajuan keberatan, dan mekanisme penyelesaian sengketa informasi dapat Anda baca secara detail pada menu <a href="/prosedur-layanan.html" class="text-teal-600 font-bold hover:underline">Alur &amp; Prosedur Layanan</a>.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
+
+    <script>
+    function submitInlineTracking(e) {
+        if (e) e.preventDefault();
+        const input = document.getElementById('inlineTicketInput');
+        const resDiv = document.getElementById('inlineTrackingResult');
+        if (!input || !resDiv) return;
+
+        const ticketNum = input.value.trim();
+        resDiv.classList.remove('hidden');
+        resDiv.className = "mt-4 p-4 rounded-xl border bg-slate-50 border-slate-200 text-slate-600 text-center text-xs animate-pulse";
+        resDiv.innerHTML = "Memeriksa database permohonan...";
+
+        setTimeout(() => {
+            // Access localStorage findTicket function exposed via app.js
+            if (typeof window.findTicket === 'function' || typeof window.openTrackingModal === 'function') {
+                window.openTrackingModal(ticketNum);
+                resDiv.classList.add('hidden');
+            }
+        }, 300);
+    }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-brand-900 text-white border-t border-slate-800">
