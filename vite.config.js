@@ -12,6 +12,10 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 profil: resolve(__dirname, 'profil.html'),
+                profilVisiMisi: resolve(__dirname, 'profil-visi-misi.html'),
+                profilTugasFungsi: resolve(__dirname, 'profil-tugas-fungsi.html'),
+                profilStruktur: resolve(__dirname, 'profil-struktur.html'),
+                profilMaklumat: resolve(__dirname, 'profil-maklumat.html'),
                 layanan: resolve(__dirname, 'layanan.html'),
                 katalogProduk: resolve(__dirname, 'katalog-produk.html'),
                 informasiPublik: resolve(__dirname, 'informasi-publik.html'),
