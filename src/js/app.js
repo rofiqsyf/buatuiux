@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initStorage();
     updateVisitorStatsUI();
     initGlobalHandlers();
+    renderHomeFeaturedProducts();
+    renderHomeLatestNews();
 });
 
 // Visitor Stats UI Updater
@@ -198,4 +200,79 @@ function initGlobalHandlers() {
         const encoded = encodeURIComponent(message);
         document.getElementById('pModalWaBtn').href = `https://wa.me/6281234567890?text=${encoded}`;
     };
+}
+
+// Render Featured Products on Homepage
+function renderHomeFeaturedProducts() {
+    const container = document.getElementById('homeFeaturedProducts');
+    if (!container) return;
+
+    const products = getProducts().slice(0, 4);
+    container.innerHTML = products.map(p => `
+        <div class="bg-white rounded-3xl border border-slate-200 p-5 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group flex flex-col justify-between">
+            <div class="space-y-3">
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 flex items-center justify-center text-white p-4">
+                    <div class="text-center space-y-1.5 z-10">
+                        <svg class="w-10 h-10 mx-auto text-teal-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        <span class="text-[10px] font-bold uppercase tracking-widest block text-teal-200">${p.brand || 'BHW Medical'}</span>
+                    </div>
+                    <span class="absolute top-2.5 left-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full border bg-white/95 text-slate-800 shadow-sm">${p.category_label || p.category}</span>
+                </div>
+
+                <div class="space-y-1">
+                    <span class="text-[10px] font-extrabold text-teal-600 uppercase tracking-wider block">${p.brand || 'Merek Medis'}</span>
+                    <h3 class="font-heading font-bold text-slate-800 text-sm leading-snug line-clamp-2 hover:text-teal-600 transition cursor-pointer" onclick='openProductDetailModal(${JSON.stringify(p)})'>
+                        ${p.name}
+                    </h3>
+                </div>
+
+                <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">${p.description}</p>
+            </div>
+
+            <div class="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                <div>
+                    <span class="text-[10px] text-slate-400 font-semibold uppercase block">Harga:</span>
+                    <span class="font-heading font-extrabold text-teal-700 text-sm sm:text-base">${p.price_formatted || 'Rp ' + p.price}</span>
+                </div>
+                <button type="button" onclick='openProductDetailModal(${JSON.stringify(p)})' class="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-3 py-2 rounded-xl shadow transition flex items-center gap-1 shrink-0">
+                    <span>Detail / Pesan</span>
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Render Latest News on Homepage
+function renderHomeLatestNews() {
+    const container = document.getElementById('homeLatestNews');
+    if (!container) return;
+
+    const newsList = getNews().slice(0, 4);
+    container.innerHTML = newsList.map(n => `
+        <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col group">
+            <div class="w-full h-48 sm:h-52 bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 relative overflow-hidden flex items-center justify-center text-teal-200 p-6">
+                <div class="text-center space-y-2 relative z-10">
+                    <svg class="w-10 h-10 mx-auto text-teal-300 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    <span class="text-xs font-bold uppercase tracking-widest block text-teal-300">PT Bhakti Husada Wonosobo</span>
+                    <span class="text-[11px] text-teal-100/70 font-medium block">Publikasi &amp; Kegiatan BUMD</span>
+                </div>
+            </div>
+            <div class="p-6 flex-grow space-y-3">
+                <div class="flex items-center gap-3 text-xs text-slate-400">
+                    <span class="bg-teal-50 text-teal-700 border border-teal-100 font-semibold px-2.5 py-0.5 rounded-full">${n.category}</span>
+                    <span>${n.published_at}</span>
+                </div>
+                <h3 class="font-heading font-bold text-slate-800 text-base leading-snug hover:text-teal-600 transition">
+                    <a href="/berita-detail.html?id=${n.id}">${n.title}</a>
+                </h3>
+                <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">${n.summary}</p>
+            </div>
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs">
+                <a href="/berita-detail.html?id=${n.id}" class="font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1.5 group">
+                    <span>Baca Selengkapnya</span>
+                    <svg class="w-4 h-4 text-teal-600 transition transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </article>
+    `).join('');
 }
