@@ -324,6 +324,17 @@
                                 <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full ${p.category_color}">${p.category_label || p.category}</span>
                                 <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${p.availability_color}">${p.availability_label || p.availability}</span>
                             </div>
+
+                            <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center p-2 group-hover:scale-105 transition duration-300 relative">
+                                ${p.image_url ? 
+                                    `<img src="${p.image_url}" alt="${p.name}" class="w-full h-full object-contain">` :
+                                    `<div class="w-full h-full bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 rounded-xl flex flex-col items-center justify-center text-teal-200 p-4 text-center">
+                                        <svg class="w-8 h-8 text-teal-300/80 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                                        <span class="text-[10px] font-bold uppercase tracking-widest block text-teal-100">${p.brand || 'BHW Medical'}</span>
+                                    </div>`
+                                }
+                            </div>
+
                             <div>
                                 <span class="text-[11px] font-extrabold text-teal-600 uppercase tracking-wider block">${p.brand || 'PT Bhakti Husada'}</span>
                                 <h3 class="font-heading font-bold text-slate-800 text-base leading-snug group-hover:text-teal-600 transition mt-0.5">${p.name}</h3>
