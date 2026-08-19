@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Alat Kesehatan & Obat - PT Bhakti Husada Wonosobo</title>
+    <meta name="description" content="Katalog resmi produk farmasi, alat kesehatan, APD, dan peralatan medis PT Bhakti Husada Wonosobo.">
+    <link rel="icon" href="/assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="/index.html" class="flex items-center gap-3.5 group">
+                    <img src="/assets/logo.png" alt="Logo PT Bhakti Husada" class="w-11 h-11 object-contain transition group-hover:scale-105">
+                    <div>
+                        <span class="block font-heading font-extrabold text-brand-900 text-base sm:text-lg leading-snug group-hover:text-teal-600 transition">PT Bhakti Husada Wonosobo</span>
+                        <span class="block text-xs font-semibold text-slate-500 tracking-wider">Layanan Informasi Publik</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-sm font-semibold text-slate-700">
+                    <a href="/index.html" class="whitespace-nowrap hover:text-brand-900 transition">Beranda</a>
+                    <a href="/profil.html" class="whitespace-nowrap hover:text-brand-900 transition">Profil</a>
+                    <a href="/layanan.html" class="whitespace-nowrap hover:text-brand-900 transition">Layanan</a>
+                    <a href="/katalog-produk.html" class="whitespace-nowrap text-teal-600 font-bold border-b-2 border-teal-600 py-1">Katalog Alkes</a>
+                    <a href="/informasi-publik.html" class="whitespace-nowrap hover:text-brand-900 transition">Informasi Publik</a>
+                    <a href="/regulasi.html" class="whitespace-nowrap hover:text-brand-900 transition">Regulasi</a>
+                    <a href="/kontak.html" class="whitespace-nowrap hover:text-brand-900 transition">Kontak</a>
+                    <a href="/admin.html" class="whitespace-nowrap text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-300 transition">Portal Admin</a>
+                </nav>
+                <div class="hidden sm:flex items-center gap-2.5 shrink-0 ml-3">
+                    <button onclick="openTrackingModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span>Lacak Tiket</span>
+                    </button>
+                    <a href="/formulir-permohonan.html" class="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition">
+                        Permohonan Informasi
+                    </a>
+                </div>
+                <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-teal-600 hover:bg-teal-50 border border-slate-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="hero-gradient text-white py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+                <span class="text-xs font-bold text-emerald-300 uppercase tracking-widest bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full">Apotek &amp; Distribusi Alkes BHW</span>
+                <h1 class="font-heading font-extrabold text-2xl sm:text-4xl text-white mt-3">Katalog Alat Kesehatan &amp; Obat</h1>
+                <p class="text-slate-200 text-xs sm:text-sm mt-2 max-w-3xl">
+                    Daftar produk farmasi, alat kesehatan, APD, dan peralatan medis berkualitas dari PT Bhakti Husada Wonosobo.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-10 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <!-- Search & Category Filters -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="relative flex-grow max-w-md">
+                        <input type="text" id="productSearchInput" placeholder="Cari nama produk, merek, atau spesifikasi..." class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-xs focus:outline-none focus:border-teal-500">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+
+                    <div id="productCategoryFilter" class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <button type="button" data-cat="all" class="cat-btn active px-3.5 py-2 rounded-xl bg-teal-600 text-white shadow-sm transition">Semua Produk</button>
+                        <button type="button" data-cat="alkes" class="cat-btn px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Alat Kesehatan</button>
+                        <button type="button" data-cat="obat" class="cat-btn px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Obat &amp; Farmasi</button>
+                        <button type="button" data-cat="apd" class="cat-btn px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">APD</button>
+                        <button type="button" data-cat="habis-pakai" class="cat-btn px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Bahan Habis Pakai</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Dynamically rendered via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-900 text-white border-t border-slate-800 py-10 text-center text-xs">
+        <p>&copy; 2026 PT Bhakti Husada Wonosobo (Perseroda). All rights reserved.</p>
+    </footer>
+
+    <!-- Tracking Modal -->
+    <div id="trackingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-100 animate-fade-in">
+            <button onclick="closeTrackingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <h3 class="font-heading font-bold text-slate-800 text-lg mb-2">Lacak Status Permohonan</h3>
+            <form onsubmit="submitTracking(event)" class="space-y-4">
+                <input type="text" id="modalTicketInput" required placeholder="Contoh: REQ-20260805-A1B2" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500 font-mono">
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-sm transition">Cek Status Sekarang</button>
+            </form>
+            <div id="trackingResult" class="mt-4 hidden p-4 rounded-xl border text-sm"></div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productDetailModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto space-y-6 animate-fade-in">
+            <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 p-2 rounded-full transition z-20">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                <div class="md:col-span-5 space-y-3 shrink-0">
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center">
+                        <div class="w-full h-full bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 flex items-center justify-center p-6 text-center text-white relative">
+                            <svg class="w-12 h-12 text-teal-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        </div>
+                        <div class="absolute top-3 left-3 z-10">
+                            <span id="pModalCatBadge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full border bg-white/90 text-slate-800 shadow-sm">Kategori</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span id="pModalBrand" class="text-xs font-extrabold text-teal-600 uppercase">Merek</span>
+                            <span class="text-slate-300">•</span>
+                            <span id="pModalAvailBadge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Tersedia</span>
+                        </div>
+                        <h2 id="pModalName" class="font-heading font-extrabold text-slate-800 text-xl leading-snug">Nama Produk</h2>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-teal-50/70 border border-teal-100 flex items-baseline justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 font-medium block">Harga Produk:</span>
+                            <span id="pModalPrice" class="font-heading font-extrabold text-teal-700 text-2xl">Rp 0</span>
+                        </div>
+                        <span id="pModalUnit" class="text-xs text-slate-500 font-semibold bg-white px-2.5 py-1 rounded-lg border border-slate-200">per unit</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase">Spesifikasi:</h4>
+                        <div id="pModalSpec" class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono space-y-1">-</div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase">Deskripsi:</h4>
+                        <p id="pModalDesc" class="text-xs text-slate-600 leading-relaxed max-h-24 overflow-y-auto">Deskripsi...</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-200 space-y-3 bg-slate-50/80 p-4 rounded-2xl border border-slate-200">
+                        <h4 class="text-xs font-extrabold text-slate-800 uppercase">Pilihan Pemesanan</h4>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-600 mb-1">Varian:</label>
+                            <div id="pModalVariantPills" class="flex flex-wrap gap-1.5"></div>
+                            <input type="hidden" id="pModalSelectedVariant" value="Standard / Default">
+                        </div>
+
+                        <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1">Jumlah:</label>
+                                <div class="inline-flex items-center border border-slate-300 rounded-xl overflow-hidden bg-slate-50">
+                                    <button type="button" onclick="updateModalQty(-1)" class="w-8 h-8 font-bold text-slate-600 hover:bg-slate-200 text-sm">-</button>
+                                    <input type="number" id="pModalQtyInput" value="1" min="1" max="999" onchange="calculateModalTotal()" class="w-12 h-8 text-center text-xs font-bold font-mono bg-white border-x border-slate-200 focus:outline-none">
+                                    <button type="button" onclick="updateModalQty(1)" class="w-8 h-8 font-bold text-slate-600 hover:bg-slate-200 text-sm">+</button>
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+                                <span class="text-[10px] text-slate-400 font-semibold uppercase block">Total Estimasi:</span>
+                                <span id="pModalSubtotal" class="font-heading font-extrabold text-teal-700 text-lg">Rp 0</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <input type="text" id="pModalBuyerName" placeholder="Nama Pemesan" oninput="updateWaLink()" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800">
+                            <input type="text" id="pModalNote" placeholder="Catatan Tambahan" oninput="updateWaLink()" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800">
+                        </div>
+                    </div>
+
+                    <div class="pt-1">
+                        <a id="pModalWaBtn" href="#" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-6 rounded-2xl text-xs sm:text-sm transition shadow-lg flex items-center justify-center gap-2">
+                            <span>Kirim Pesanan via WhatsApp Admin BHW</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { getProducts } from '/src/js/storage.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = getProducts();
+            const grid = document.getElementById('productsGrid');
+            const searchInput = document.getElementById('productSearchInput');
+            const catFilter = document.getElementById('productCategoryFilter');
+
+            let currentCategory = 'all';
+
+            function renderProducts() {
+                const query = searchInput ? searchInput.value.toLowerCase() : '';
+                const filtered = products.filter(p => {
+                    const matchCat = currentCategory === 'all' || p.category === currentCategory;
+                    const matchQuery = !query || p.name.toLowerCase().includes(query) || (p.brand && p.brand.toLowerCase().includes(query)) || (p.specification && p.specification.toLowerCase().includes(query));
+                    return matchCat && matchQuery;
+                });
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = `<div class="col-span-full py-12 text-center text-slate-400 text-xs">Tidak ada produk yang cocok dengan pencarian Anda.</div>`;
+                    return;
+                }
+
+                grid.innerHTML = filtered.map(p => `
+                    <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between group">
+                        <div class="p-5 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full ${p.category_color}">${p.category_label || p.category}</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${p.availability_color}">${p.availability_label || p.availability}</span>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-extrabold text-teal-600 uppercase tracking-wider block">${p.brand || 'PT Bhakti Husada'}</span>
+                                <h3 class="font-heading font-bold text-slate-800 text-base leading-snug group-hover:text-teal-600 transition mt-0.5">${p.name}</h3>
+                            </div>
+                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${p.description}</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 border-t border-slate-100 space-y-3">
+                            <div class="flex items-baseline justify-between">
+                                <span class="font-heading font-extrabold text-teal-700 text-lg">${p.price_formatted}</span>
+                                <span class="text-[10px] text-slate-400 font-semibold">per ${p.unit}</span>
+                            </div>
+                            <button onclick='openProductDetailModal(${JSON.stringify(p).replace(/'/g, "&apos;")})' class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-sm">
+                                Lihat Detail &amp; Pesan
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            if (searchInput) searchInput.addEventListener('input', renderProducts);
+            if (catFilter) {
+                catFilter.querySelectorAll('.cat-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        catFilter.querySelectorAll('.cat-btn').forEach(b => {
+                            b.className = 'cat-btn px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition';
+                        });
+                        btn.className = 'cat-btn active px-3.5 py-2 rounded-xl bg-teal-600 text-white shadow-sm transition';
+                        currentCategory = btn.getAttribute('data-cat');
+                        renderProducts();
+                    });
+                });
+            }
+
+            renderProducts();
+        });
+    </script>
+    <script type="module" src="/src/js/app.js"></script>
+</body>
+</html>

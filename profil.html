@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil & Struktur Organisasi - PT Bhakti Husada Wonosobo</title>
+    <meta name="description" content="Profil resmi, visi misi, tugas fungsi, dan struktur organisasi PT Bhakti Husada Wonosobo (Perseroda).">
+    <link rel="icon" href="/assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="/index.html" class="flex items-center gap-3.5 group">
+                    <img src="/assets/logo.png" alt="Logo PT Bhakti Husada" class="w-11 h-11 object-contain transition group-hover:scale-105">
+                    <div>
+                        <span class="block font-heading font-extrabold text-brand-900 text-base sm:text-lg leading-snug group-hover:text-teal-600 transition">PT Bhakti Husada Wonosobo</span>
+                        <span class="block text-xs font-semibold text-slate-500 tracking-wider">Layanan Informasi Publik</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-sm font-semibold text-slate-700">
+                    <a href="/index.html" class="whitespace-nowrap hover:text-brand-900 transition">Beranda</a>
+                    <a href="/profil.html" class="whitespace-nowrap text-teal-600 font-bold border-b-2 border-teal-600 py-1">Profil</a>
+                    <a href="/layanan.html" class="whitespace-nowrap hover:text-brand-900 transition">Layanan</a>
+                    <a href="/katalog-produk.html" class="whitespace-nowrap hover:text-brand-900 transition">Katalog Alkes</a>
+                    <a href="/informasi-publik.html" class="whitespace-nowrap hover:text-brand-900 transition">Informasi Publik</a>
+                    <a href="/regulasi.html" class="whitespace-nowrap hover:text-brand-900 transition">Regulasi</a>
+                    <a href="/kontak.html" class="whitespace-nowrap hover:text-brand-900 transition">Kontak</a>
+                    <a href="/admin.html" class="whitespace-nowrap text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-300 transition">Portal Admin</a>
+                </nav>
+                <div class="hidden sm:flex items-center gap-2.5 shrink-0 ml-3">
+                    <button onclick="openTrackingModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span>Lacak Tiket</span>
+                    </button>
+                    <a href="/formulir-permohonan.html" class="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition">
+                        Permohonan Informasi
+                    </a>
+                </div>
+                <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-teal-600 hover:bg-teal-50 border border-slate-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200/90 bg-white/95 backdrop-blur-xl px-4 pt-4 pb-7 space-y-2 shadow-2xl">
+            <a href="/index.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Beranda</a>
+            <a href="/profil.html" class="block px-3.5 py-2 rounded-xl text-sm font-bold bg-teal-50 text-teal-700">Profil Perusahaan</a>
+            <a href="/layanan.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Layanan</a>
+            <a href="/katalog-produk.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Katalog Alkes</a>
+            <a href="/informasi-publik.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Informasi Publik</a>
+            <a href="/regulasi.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Regulasi</a>
+            <a href="/kontak.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Kontak</a>
+            <a href="/admin.html" class="block px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700">Dashboard Admin</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="hero-gradient text-white py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+                <h1 class="font-heading font-extrabold text-2xl sm:text-4xl text-white">Profil Layanan Informasi Publik PT Bhakti Husada Wonosobo</h1>
+                <p class="text-slate-200 text-xs sm:text-sm mt-2 max-w-3xl">
+                    Layanan Informasi Publik PT Bhakti Husada Wonosobo diselenggarakan berdasarkan amanat UU No. 14 Tahun 2008 dan Surat Permohonan Fasilitasi Resmi kepada Dinas Komunikasi dan Informatika Kabupaten Wonosobo.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div id="visi-misi" class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6 scroll-mt-28">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Komitmen Pelayanan</span>
+                        <h2 class="font-heading font-extrabold text-2xl text-slate-800 mt-1">Visi & Misi Pelayanan</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-teal-50/60 border border-teal-100 p-6 rounded-2xl space-y-3">
+                            <h3 class="font-heading font-bold text-teal-800 text-lg">Visi</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Terwujudnya tata kelola perusahaan yang baik (*Good Corporate Governance*) serta pelayanan informasi publik yang transparan, akuntabel, dan mudah diakses oleh seluruh masyarakat Kabupaten Wonosobo.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-3">
+                            <h3 class="font-heading font-bold text-slate-800 text-lg">Misi</h3>
+                            <ul class="text-xs text-slate-700 leading-relaxed space-y-2 list-disc list-inside">
+                                <li>Mengatur dan menyediakan informasi publik secara efektif, efisien, dan berkesinambungan.</li>
+                                <li>Mempermudah akses masyarakat terhadap dokumen publik BUMD secara daring.</li>
+                                <li>Meningkatkan sinergi antar-perangkat daerah bersama Diskominfo Kabupaten Wonosobo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tugas-fungsi" class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6 scroll-mt-28">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Wewenang Operasional</span>
+                        <h2 class="font-heading font-extrabold text-2xl text-slate-800 mt-1">Tugas & Fungsi Utama Operasional</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs leading-relaxed text-slate-700">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <h3 class="font-bold text-brand-900 text-sm">1. Penyediaan Informasi</h3>
+                            <p>Mengkoordinasikan pengumpulan, pendataan, dan klasifikasi seluruh dokumen informasi publik dari setiap unit kerja PT Bhakti Husada Wonosobo (Perseroda).</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <h3 class="font-bold text-brand-900 text-sm">2. Pelayanan Permohonan</h3>
+                            <p>Menerima, memproses, dan memverifikasi permohonan informasi publik serta pengajuan keberatan warga masyarakat secara transparan dan akuntabel.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <h3 class="font-bold text-brand-900 text-sm">3. Pengujian Kualifikasi</h3>
+                            <p>Melakukan pengujian konsekuensi informasi publik yang dikecualikan sesuai dengan amanat UU KIP No. 14 Tahun 2008.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="struktur" class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6 scroll-mt-28">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Tata Kelola Peran</span>
+                        <h2 class="font-heading font-extrabold text-2xl text-slate-800 mt-1">Struktur Organisasi Pelayanan</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <div class="w-14 h-14 rounded-full bg-slate-200 text-slate-800 font-extrabold flex items-center justify-center mx-auto text-base">S</div>
+                            <h3 class="font-heading font-bold text-slate-800 text-base">Direktur Perusahaan</h3>
+                            <p class="text-xs text-teal-600 font-bold">Sumali Ibnu Chamid, S.Sos.I</p>
+                            <p class="text-[11px] text-slate-500 pt-1">Pengarah & Pengawas Utama Layanan Informasi Publik</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-teal-50 border border-teal-200 space-y-2">
+                            <div class="w-14 h-14 rounded-full bg-teal-600 text-white font-extrabold flex items-center justify-center mx-auto text-base">A</div>
+                            <h3 class="font-heading font-bold text-slate-800 text-base">Ketua Tim Informasi (Admin)</h3>
+                            <p class="text-xs text-teal-700 font-bold">Admin Utama Sistem</p>
+                            <p class="text-[11px] text-slate-500 pt-1">Penanggung Jawab Operasional & Pengolah Dokumen DIP</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <div class="w-14 h-14 rounded-full bg-slate-200 text-slate-800 font-extrabold flex items-center justify-center mx-auto text-base">P</div>
+                            <h3 class="font-heading font-bold text-slate-800 text-base">Petugas Layanan (Operator)</h3>
+                            <p class="text-xs text-teal-600 font-bold">Tim Meja Layanan Informasi</p>
+                            <p class="text-[11px] text-slate-500 pt-1">Verifikator Identitas & Pelaksana Permohonan Publik</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="maklumat" class="bg-brand-900 text-white p-8 sm:p-12 rounded-3xl space-y-4 text-center scroll-mt-28">
+                    <span class="text-xs font-bold text-teal-400 uppercase tracking-widest">Maklumat Pelayanan</span>
+                    <h2 class="font-heading font-extrabold text-xl sm:text-2xl">Komitmen Maklumat Informasi Publik</h2>
+                    <p class="text-xs sm:text-sm text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                        "Kami Manajemen dan Pengelola Informasi PT Bhakti Husada Wonosobo (Perseroda) berkomitmen untuk memberikan pelayanan informasi publik secara sungguh-sungguh, akurat, santun, transparan, dan tidak memungut biaya tidak sah demi kepuasan masyarakat."
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-900 text-white border-t border-slate-800 py-10 text-center text-xs">
+        <p>&copy; 2026 PT Bhakti Husada Wonosobo (Perseroda). All rights reserved.</p>
+    </footer>
+
+    <!-- Tracking Modal -->
+    <div id="trackingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-100 animate-fade-in">
+            <button onclick="closeTrackingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <h3 class="font-heading font-bold text-slate-800 text-lg mb-2">Lacak Status Permohonan</h3>
+            <form onsubmit="submitTracking(event)" class="space-y-4">
+                <input type="text" id="modalTicketInput" required placeholder="Contoh: REQ-20260805-A1B2" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500 font-mono">
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-sm transition">Cek Status Sekarang</button>
+            </form>
+            <div id="trackingResult" class="mt-4 hidden p-4 rounded-xl border text-sm"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/app.js"></script>
+</body>
+</html>

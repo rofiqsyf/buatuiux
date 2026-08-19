@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Layanan Informasi Publik PT Bhakti Husada Wonosobo</title>
+    <meta name="description" content="Portal Resmi Layanan Informasi Publik PT Bhakti Husada Wonosobo (Perseroda). Akses permohonan informasi, regulasi, dan transparansi BUMD secara akuntabel.">
+    <link rel="icon" href="/assets/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo & Brand Name -->
+                <a href="/index.html" class="flex items-center gap-3.5 group">
+                    <img src="/assets/logo.png" alt="Logo PT Bhakti Husada" class="w-11 h-11 object-contain transition group-hover:scale-105">
+                    <div>
+                        <span class="block font-heading font-extrabold text-brand-900 text-base sm:text-lg leading-snug group-hover:text-teal-600 transition">
+                            PT Bhakti Husada Wonosobo
+                        </span>
+                        <span class="block text-xs font-semibold text-slate-500 tracking-wider">
+                            Layanan Informasi Publik
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-sm font-semibold text-slate-700">
+                    <a href="/index.html" class="whitespace-nowrap text-teal-600 font-bold border-b-2 border-teal-600 py-1">Beranda</a>
+
+                    <!-- Dropdown Profil -->
+                    <div class="relative group py-5 shrink-0">
+                        <a href="/profil.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-brand-900 transition">
+                            <span>Profil</span>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-brand-900 group-hover:rotate-180 transition transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-60 bg-white rounded-2xl shadow-xl border border-slate-100 py-2.5 z-50 animate-fade-in">
+                            <a href="/profil.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Profil Perusahaan</a>
+                            <a href="/profil.html#visi-misi" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Visi & Misi Pelayanan</a>
+                            <a href="/profil.html#tugas-fungsi" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Tugas & Fungsi Operasional</a>
+                            <a href="/profil.html#struktur" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Struktur Perusahaan</a>
+                            <a href="/profil.html#maklumat" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Maklumat Pelayanan</a>
+                        </div>
+                    </div>
+
+                    <a href="/layanan.html" class="whitespace-nowrap hover:text-brand-900 transition">Layanan</a>
+                    <a href="/katalog-produk.html" class="whitespace-nowrap hover:text-brand-900 transition">Katalog Alkes</a>
+
+                    <!-- Dropdown Informasi Publik -->
+                    <div class="relative group py-5 shrink-0">
+                        <a href="/informasi-publik.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-brand-900 transition">
+                            <span>Informasi Publik</span>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-brand-900 group-hover:rotate-180 transition transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-60 bg-white rounded-2xl shadow-xl border border-slate-100 py-2.5 z-50 animate-fade-in">
+                            <a href="/informasi-publik.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Daftar Informasi Publik (DIP)</a>
+                            <a href="/prosedur-layanan.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Alur & Prosedur Layanan</a>
+                            <a href="/berita.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Berita & Publikasi Kegiatan</a>
+                        </div>
+                    </div>
+
+                    <a href="/regulasi.html" class="whitespace-nowrap hover:text-brand-900 transition">Regulasi</a>
+                    <a href="/kontak.html" class="whitespace-nowrap hover:text-brand-900 transition">Kontak</a>
+                    <a href="/admin.html" class="whitespace-nowrap text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-300 transition flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Portal Admin</span>
+                    </a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center gap-2.5 shrink-0 ml-3">
+                    <button onclick="openTrackingModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                        <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span>Lacak Tiket</span>
+                    </button>
+                    <a href="/formulir-permohonan.html" class="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span>Permohonan Informasi</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button type="button" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-teal-600 hover:bg-teal-50 border border-slate-200 transition focus:outline-none flex items-center justify-center">
+                    <svg id="mobileMenuIconClosed" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="mobileMenuIconOpen" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200/90 bg-white/95 backdrop-blur-xl px-4 pt-4 pb-7 space-y-2 shadow-2xl animate-fade-in">
+            <a href="/index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-bold bg-teal-50 text-teal-700 border border-teal-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span>Beranda</span>
+            </a>
+            <a href="/profil.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span>Profil Perusahaan</span>
+            </a>
+            <a href="/layanan.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>Portal Layanan Digital</span>
+            </a>
+            <a href="/katalog-produk.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                <span>Katalog Alkes &amp; Obat</span>
+            </a>
+            <a href="/informasi-publik.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Informasi Publik (DIP)</span>
+            </a>
+            <a href="/regulasi.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <span>Regulasi KIP</span>
+            </a>
+            <a href="/kontak.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                <span>Hubungi Kami</span>
+            </a>
+            <a href="/admin.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100">
+                <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Dashboard Admin</span>
+            </a>
+
+            <div class="pt-3 border-t border-slate-200/80 flex flex-col gap-2.5">
+                <button onclick="toggleMobileMenu(); openTrackingModal();" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-2.5 rounded-xl text-center text-xs flex items-center justify-center gap-2 border border-slate-200/80 transition">
+                    <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span>Lacak Status Tiket Permohonan</span>
+                </button>
+                <a href="/formulir-permohonan.html" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-center text-xs transition shadow-md flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Formulir Permohonan Online</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white relative overflow-hidden py-20 lg:py-28">
+            <div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay" style="background-image: url('/assets/Gambar PT Bhakti Husada.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
+                        Layanan Informasi Publik <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-200">PT Bhakti Husada Wonosobo</span>
+                    </h1>
+
+                    <p class="text-slate-200 text-sm sm:text-lg leading-relaxed max-w-3xl mx-auto">
+                        Akses transparan, mudah, dan akuntabel untuk memperoleh informasi publik, dokumen resmi, serta pengajuan permohonan informasi secara daring.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="/formulir-permohonan.html" class="w-full sm:w-auto bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm sm:text-base transition shadow-xl hover:shadow-teal-500/25 flex items-center justify-center gap-2.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            <span>Ajukan Permohonan Informasi</span>
+                        </a>
+                        <a href="/informasi-publik.html" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl text-sm sm:text-base transition border border-white/20 flex items-center justify-center gap-2.5 backdrop-blur-md">
+                            <svg class="w-5 h-5 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <span>Jelajahi Informasi DIP</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistik Counter -->
+        <section class="bg-white border-b border-slate-200 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div class="text-3xl font-heading font-extrabold text-brand-900">10</div>
+                        <div class="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">Total Dokumen Publik</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-teal-50/60 border border-teal-100">
+                        <div class="text-3xl font-heading font-extrabold text-teal-600">4</div>
+                        <div class="text-xs font-semibold text-teal-700 mt-1 uppercase tracking-wider">Informasi Berkala</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-sky-50/60 border border-sky-100">
+                        <div class="text-3xl font-heading font-extrabold text-sky-600">2</div>
+                        <div class="text-xs font-semibold text-sky-700 mt-1 uppercase tracking-wider">Informasi Serta Merta</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100">
+                        <div class="text-3xl font-heading font-extrabold text-emerald-600">3</div>
+                        <div class="text-xs font-semibold text-emerald-700 mt-1 uppercase tracking-wider">Informasi Setiap Saat</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Kategori DIP -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-900">Kategori Daftar Informasi Publik (DIP)</h2>
+                    <p class="text-slate-600 text-sm mt-2">Dokumen resmi disajikan secara terbuka, transparan, dan akuntabel.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="/informasi-publik.html?kategori=berkala" class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold mb-5 group-hover:bg-teal-600 group-hover:text-white transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-800 text-lg group-hover:text-teal-600 transition">Informasi Berkala</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Dokumen yang diperbarui dan diumumkan secara rutin seperti laporan keuangan, laporan kinerja, dan program kerja.</p>
+                        </div>
+                        <div class="mt-6 flex items-center text-xs font-bold text-teal-600 gap-1.5 group-hover:translate-x-1 transition transform">
+                            <span>Lihat Dokumen Berkala</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+                    </a>
+
+                    <a href="/informasi-publik.html?kategori=serta-merta" class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold mb-5 group-hover:bg-sky-600 group-hover:text-white transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-800 text-lg group-hover:text-sky-600 transition">Informasi Serta Merta</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Informasi yang dapat mengancam hajat hidup orang banyak dan ketertiban umum yang diumumkan serta-merta.</p>
+                        </div>
+                        <div class="mt-6 flex items-center text-xs font-bold text-sky-600 gap-1.5 group-hover:translate-x-1 transition transform">
+                            <span>Lihat Dokumen Serta Merta</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+                    </a>
+
+                    <a href="/informasi-publik.html?kategori=setiap-saat" class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold mb-5 group-hover:bg-emerald-600 group-hover:text-white transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-800 text-lg group-hover:text-emerald-600 transition">Informasi Setiap Saat</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Informasi yang wajib disediakan dan dapat diakses oleh pemohon publik setiap saat setelah melalui prosedur permintaan.</p>
+                        </div>
+                        <div class="mt-6 flex items-center text-xs font-bold text-emerald-600 gap-1.5 group-hover:translate-x-1 transition transform">
+                            <span>Lihat Dokumen Setiap Saat</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan E-PPID Interaktif CTA -->
+        <section class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-brand-900 to-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="text-xs font-bold text-teal-400 uppercase tracking-widest bg-teal-950/80 border border-teal-800 px-3 py-1 rounded-full">Layanan Informasi Online</span>
+                            <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white">Butuh Informasi Publik Spesifik?</h2>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">
+                                Masyarakat dapat mengajukan permohonan informasi resmi secara mudah tanpa harus datang langsung ke kantor. Lengkapi formulir dan pantau progress secara real-time.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-4 flex flex-col gap-3">
+                            <a href="/formulir-permohonan.html" class="bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-xs sm:text-sm text-center transition shadow-lg flex items-center justify-center gap-2">
+                                <span>Isi Formulir Permohonan</span>
+                                <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                            <button onclick="openTrackingModal()" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-xs sm:text-sm text-center transition border border-white/20">
+                                Lacak Tiket Permohonan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Col 1: About -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="/assets/logo.png" alt="Logo PT Bhakti Husada" class="w-10 h-10 object-contain bg-white rounded-lg p-1">
+                        <div>
+                            <h3 class="font-heading font-bold text-white text-base">PT Bhakti Husada</h3>
+                            <p class="text-xs text-slate-400">Kabupaten Wonosobo (Perseroda)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        Layanan Informasi Publik PT Bhakti Husada Wonosobo bertugas memberikan pelayanan informasi publik yang transparan, akuntabel, dan efisien.
+                    </p>
+                </div>
+
+                <!-- Col 2: Visitor Stats -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Statistik Pengunjung</h4>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700/60">
+                            <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                Pengunjung Online:
+                            </span>
+                            <span id="statVisitorOnline" class="font-bold text-emerald-400 font-mono">5</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Hari Ini:</span>
+                            <span id="statVisitorToday" class="font-semibold text-white font-mono">48</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Bulan Ini:</span>
+                            <span id="statVisitorMonth" class="font-semibold text-white font-mono">1.320</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Total Pengunjung:</span>
+                            <span id="statVisitorTotal" class="font-semibold text-teal-400 font-mono">15.480</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Govt Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Tautan Instansi</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="https://wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Portal Pemkab Wonosobo</a></li>
+                        <li><a href="https://rsud.wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">RSUD KRT Setjonegoro Wonosobo</a></li>
+                        <li><a href="https://dinkes.wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Dinas Kesehatan Kab. Wonosobo</a></li>
+                        <li><a href="https://kemkes.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Kementerian Kesehatan RI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Maps -->
+                <div class="space-y-3">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider border-b border-slate-700 pb-2">Sekretariat Layanan</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>PT Bhakti Husada Wonosobo (Perseroda)</strong><br>
+                        Jl. Kolonel Kardjono No. 16, Ngedok, Wonosobo Barat, Kab. Wonosobo, Jawa Tengah 56311
+                    </p>
+                    <div class="text-xs text-slate-300 space-y-1">
+                        <p><strong class="text-white">Email:</strong> info@bhaktihusada-wonosobo.co.id</p>
+                        <p><strong class="text-white">Telepon:</strong> (0286) 321134</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-400">
+                <p>&copy; 2026 PT Bhakti Husada Wonosobo (Perseroda). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tracking Modal -->
+    <div id="trackingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-100 animate-fade-in">
+            <button onclick="closeTrackingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-slate-800 text-lg">Lacak Status Permohonan</h3>
+                    <p class="text-xs text-slate-500">Masukkan nomor tiket permohonan informasi Anda</p>
+                </div>
+            </div>
+
+            <form onsubmit="submitTracking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">Nomor Tiket (Contoh: REQ-2026...)</label>
+                    <input type="text" id="modalTicketInput" required placeholder="Contoh: REQ-20260805-A1B2" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500 font-mono">
+                </div>
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
+                    Cek Status Sekarang
+                </button>
+            </form>
+
+            <div id="trackingResult" class="mt-4 hidden p-4 rounded-xl border text-sm"></div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productDetailModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto space-y-6 animate-fade-in">
+            <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 p-2 rounded-full transition z-20">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                <div class="md:col-span-5 space-y-3 shrink-0">
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center">
+                        <div id="pModalGradient" class="w-full h-full bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 flex items-center justify-center p-6 text-center text-white relative">
+                            <div class="space-y-2 relative z-10">
+                                <svg class="w-12 h-12 mx-auto text-teal-300/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                                <span class="text-xs font-bold uppercase tracking-widest block text-teal-100/70">Alkes BHW</span>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 left-3 z-10">
+                            <span id="pModalCatBadge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full border bg-white/90 text-slate-800 shadow-sm">Kategori</span>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-[11px] text-slate-600 space-y-1.5 font-medium">
+                        <div class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 100% Produk Original & Terjamin</div>
+                        <div class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Pengadaan Instansi / RS / Klinik</div>
+                        <div class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Respon Cepat Sekretariat BHW</div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span id="pModalBrand" class="text-xs font-extrabold text-teal-600 uppercase tracking-wider">Merek</span>
+                            <span class="text-slate-300">•</span>
+                            <span id="pModalAvailBadge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Tersedia</span>
+                        </div>
+                        <h2 id="pModalName" class="font-heading font-extrabold text-slate-800 text-xl sm:text-2xl leading-snug">Nama Produk</h2>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-teal-50/70 border border-teal-100 flex items-baseline justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 font-medium block mb-0.5">Harga Produk:</span>
+                            <span id="pModalPrice" class="font-heading font-extrabold text-teal-700 text-2xl sm:text-3xl">Rp 0</span>
+                        </div>
+                        <span id="pModalUnit" class="text-xs text-slate-500 font-semibold bg-white px-2.5 py-1 rounded-lg border border-slate-200">per unit</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Spesifikasi:</h4>
+                        <div id="pModalSpec" class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono leading-relaxed space-y-1">-</div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Deskripsi Lengkap:</h4>
+                        <p id="pModalDesc" class="text-xs text-slate-600 leading-relaxed max-h-24 overflow-y-auto">Deskripsi...</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-200 space-y-3.5 bg-slate-50/80 p-4 rounded-2xl border border-slate-200">
+                        <h4 class="text-xs font-extrabold text-brand uppercase tracking-wider flex items-center gap-1.5">Form Pilihan Pemesanan</h4>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-600 mb-1.5">Varian / Kemasan:</label>
+                            <div id="pModalVariantPills" class="flex flex-wrap gap-1.5"></div>
+                            <input type="hidden" id="pModalSelectedVariant" value="Standard / Default">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3 rounded-xl border border-slate-200">
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1">Jumlah:</label>
+                                <div class="inline-flex items-center border border-slate-300 rounded-xl overflow-hidden bg-slate-50">
+                                    <button type="button" onclick="updateModalQty(-1)" class="w-8 h-8 flex items-center justify-center font-bold text-slate-600 hover:bg-slate-200 text-sm">-</button>
+                                    <input type="number" id="pModalQtyInput" value="1" min="1" max="999" onchange="calculateModalTotal()" class="w-12 h-8 text-center text-xs font-bold font-mono bg-white border-x border-slate-200 focus:outline-none">
+                                    <button type="button" onclick="updateModalQty(1)" class="w-8 h-8 flex items-center justify-center font-bold text-slate-600 hover:bg-slate-200 text-sm">+</button>
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+                                <span class="text-[10px] text-slate-400 font-semibold uppercase block">Total Estimasi:</span>
+                                <span id="pModalSubtotal" class="font-heading font-extrabold text-teal-700 text-lg leading-tight">Rp 0</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Nama Pemesan (Opsional):</label>
+                                <input type="text" id="pModalBuyerName" placeholder="Nama / Instansi" oninput="updateWaLink()" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Catatan (Opsional):</label>
+                                <input type="text" id="pModalNote" placeholder="Catatan khusus" oninput="updateWaLink()" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-1">
+                        <a id="pModalWaBtn" href="#" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-6 rounded-2xl text-xs sm:text-sm transition shadow-lg flex items-center justify-center gap-2">
+                            <span>Kirim Pesanan via WhatsApp Admin BHW</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/app.js"></script>
+</body>
+</html>
