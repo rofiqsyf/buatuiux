@@ -25,10 +25,38 @@
                 </a>
                 <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-sm font-semibold text-slate-700">
                     <a href="/index.html" class="whitespace-nowrap hover:text-brand-900 transition">Beranda</a>
-                    <a href="/profil.html" class="whitespace-nowrap hover:text-brand-900 transition">Profil</a>
+
+                    <!-- Dropdown Profil -->
+                    <div class="relative group py-5 shrink-0">
+                        <a href="/profil.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-brand-900 transition">
+                            <span>Profil</span>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-brand-900 group-hover:rotate-180 transition transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-60 bg-white rounded-2xl shadow-xl border border-slate-100 py-2.5 z-50 animate-fade-in">
+                            <a href="/profil.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Profil Perusahaan</a>
+                            <a href="/profil.html#visi-misi" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Visi &amp; Misi Pelayanan</a>
+                            <a href="/profil.html#tugas-fungsi" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Tugas &amp; Fungsi Operasional</a>
+                            <a href="/profil.html#struktur" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Struktur Perusahaan</a>
+                            <a href="/profil.html#maklumat" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Maklumat Pelayanan</a>
+                        </div>
+                    </div>
+
                     <a href="/layanan.html" class="whitespace-nowrap hover:text-brand-900 transition">Layanan</a>
                     <a href="/katalog-produk.html" class="whitespace-nowrap hover:text-brand-900 transition">Katalog Alkes</a>
-                    <a href="/informasi-publik.html" class="whitespace-nowrap hover:text-brand-900 transition">Informasi Publik</a>
+
+                    <!-- Dropdown Informasi Publik -->
+                    <div class="relative group py-5 shrink-0">
+                        <a href="/informasi-publik.html" class="inline-flex items-center gap-1 whitespace-nowrap hover:text-brand-900 transition">
+                            <span>Informasi Publik</span>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-brand-900 group-hover:rotate-180 transition transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-60 bg-white rounded-2xl shadow-xl border border-slate-100 py-2.5 z-50 animate-fade-in">
+                            <a href="/informasi-publik.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Daftar Informasi Publik (DIP)</a>
+                            <a href="/prosedur-layanan.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Alur &amp; Prosedur Layanan</a>
+                            <a href="/berita.html" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition">Berita &amp; Publikasi Kegiatan</a>
+                        </div>
+                    </div>
+
                     <a href="/regulasi.html" class="whitespace-nowrap text-teal-600 font-bold border-b-2 border-teal-600 py-1">Regulasi</a>
                     <a href="/kontak.html" class="whitespace-nowrap hover:text-brand-900 transition">Kontak</a>
                 </nav>
@@ -65,8 +93,83 @@
         </section>
     </main>
 
-    <footer class="bg-brand-900 text-white border-t border-slate-800 py-10 text-center text-xs">
-        <p>&copy; 2026 PT Bhakti Husada Wonosobo (Perseroda). All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Col 1: About -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="/assets/logo.png" alt="Logo PT Bhakti Husada" class="w-10 h-10 object-contain bg-white rounded-lg p-1">
+                        <div>
+                            <h3 class="font-heading font-bold text-white text-base">PT Bhakti Husada</h3>
+                            <p class="text-xs text-slate-400">Kabupaten Wonosobo (Perseroda)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        Layanan Informasi Publik PT Bhakti Husada Wonosobo bertugas memberikan pelayanan informasi publik yang transparan, akuntabel, dan efisien.
+                    </p>
+                </div>
+
+                <!-- Col 2: Visitor Stats -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Statistik Pengunjung</h4>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700/60">
+                            <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                Pengunjung Online:
+                            </span>
+                            <span id="statVisitorOnline" class="font-bold text-emerald-400 font-mono">5</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Hari Ini:</span>
+                            <span id="statVisitorToday" class="font-semibold text-white font-mono">48</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Bulan Ini:</span>
+                            <span id="statVisitorMonth" class="font-semibold text-white font-mono">1.320</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-800/40 px-3 py-1.5 rounded-lg border border-slate-700/30">
+                            <span>Total Pengunjung:</span>
+                            <span id="statVisitorTotal" class="font-semibold text-teal-400 font-mono">15.480</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Govt Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Tautan Instansi</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="https://wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Portal Pemkab Wonosobo</a></li>
+                        <li><a href="https://rsud.wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">RSUD KRT Setjonegoro Wonosobo</a></li>
+                        <li><a href="https://dinkes.wonosobokab.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Dinas Kesehatan Kab. Wonosobo</a></li>
+                        <li><a href="https://kemkes.go.id" target="_blank" rel="noopener" class="hover:text-teal-400 transition">Kementerian Kesehatan RI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Maps -->
+                <div class="space-y-3">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider border-b border-slate-700 pb-2">Sekretariat Layanan</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>PT Bhakti Husada Wonosobo (Perseroda)</strong><br>
+                        Jl. Kolonel Kardjono No. 16, Ngedok, Wonosobo Barat, Kab. Wonosobo, Jawa Tengah 56311
+                    </p>
+                    <div class="text-xs text-slate-300 space-y-1">
+                        <p><strong class="text-white">Email:</strong> info@bhaktihusada-wonosobo.co.id</p>
+                        <p><strong class="text-white">Telepon:</strong> (0286) 321134</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-400">
+                <p>&copy; 2026 PT Bhakti Husada Wonosobo (Perseroda). All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Tracking Modal -->
