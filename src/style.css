@@ -43,3 +43,11 @@
 .animate-fade-in {
     animation: fadeIn 0.25s ease-out forwards;
 }
+
+/* Ensure navbar dropdowns display reliably on hover */
+.group:hover > div.hidden {
+    display: block !important;
+}
+.group:hover svg.group-hover\:rotate-180 {
+    transform: rotate(180deg) !important;
+}

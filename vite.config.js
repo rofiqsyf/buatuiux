@@ -21,7 +21,6 @@ export default defineConfig({
                 beritaDetail: resolve(__dirname, 'berita-detail.html'),
                 formulirPermohonan: resolve(__dirname, 'formulir-permohonan.html'),
                 kontak: resolve(__dirname, 'kontak.html'),
-                admin: resolve(__dirname, 'admin.html'),
             },
         },
     },
